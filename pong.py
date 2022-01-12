@@ -14,8 +14,8 @@ paddle_a = turtle.Turtle()
 paddle_a.speed(0)
 paddle_a.shape('square')
 paddle_a.color('white')
-paddle_a.penup()
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
+paddle_a.penup()
 paddle_a.goto(-350, 0)
 
 # Paddle B
@@ -36,7 +36,7 @@ ball.penup()
 ball.goto(0, 0)
 # Pixels the ball move
 ball.dx = 2
-ball.dy = 2
+ball.dy = -2
 
 
 # Functions to move paddles
@@ -79,3 +79,20 @@ while True:
     # Move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # Border Checking
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    if ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
