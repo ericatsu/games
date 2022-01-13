@@ -71,6 +71,12 @@ wnd.onkeypress(paddle_a_down, 's')
 wnd.onkeypress(paddle_b_up, 'Up')
 wnd.onkeypress(paddle_b_down, 'Down')
 
+# Pen
+pen = turtle.Turtle()
+pen.color('white')
+pen.speed(0)
+pen.penup()
+
 
 #Main Game Loop
 while True:
